@@ -1,0 +1,14 @@
+CC = gcc
+CFLAGS = -O2 -Wall -ggdb -DBSD -DNDEBUG
+TARGETS = flip
+
+$(TARGETS): flip.o getopt.o flip.man
+	$(CC) $(CFLAGS) -o $@ flip.o getopt.o
+flip.o: flip.c flip.h
+	$(CC) $(CFLAGS) -c flip.c
+getopt.o: getopt.c
+	  $(CC) $(CFLAGS) -c getopt.c
+flip.man: flip.1
+	nroff -man flip.1 > flip.man
+clean:
+	-rm -f *.o $(TARGETS)

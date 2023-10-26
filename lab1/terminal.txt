@@ -1,0 +1,39 @@
+rbey1@n01-50:~$ cd cs350
+rbey1@n01-50:~/cs350$ cd lab1
+rbey1@n01-50:~/cs350/lab1$ ls
+flip	flip.c	flip.man  getopt.c  Makefile
+flip.1	flip.h	flip.o	  getopt.o  Makefile~
+rbey1@n01-50:~/cs350/lab1$ make clean
+rm -f *.o flip
+rbey1@n01-50:~/cs350/lab1$ make
+gcc -O2 -Wall -ggdb -DBSD -DNDEBUG -c flip.c
+gcc -O2 -Wall -ggdb -DBSD -DNDEBUG -c getopt.c
+gcc -O2 -Wall -ggdb -DBSD -DNDEBUG -o flip flip.o getopt.o
+rbey1@n01-50:~/cs350/lab1$ make
+make: 'flip' is up to date.
+rbey1@n01-50:~/cs350/lab1$ emacs flip.h
+rbey1@n01-50:~/cs350/lab1$ make
+gcc -O2 -Wall -ggdb -DBSD -DNDEBUG -c flip.c
+gcc -O2 -Wall -ggdb -DBSD -DNDEBUG -c getopt.c
+gcc -O2 -Wall -ggdb -DBSD -DNDEBUG -o flip flip.o getopt.o
+rbey1@n01-50:~/cs350/lab1$ make
+make: 'flip' is up to date.
+rbey1@n01-50:~/cs350/lab1$ emacs flip.c
+rbey1@n01-50:~/cs350/lab1$ make
+gcc -O2 -Wall -ggdb -DBSD -DNDEBUG -c flip.c
+gcc -O2 -Wall -ggdb -DBSD -DNDEBUG -o flip flip.o getopt.o
+rbey1@n01-50:~/cs350/lab1$ emacs getopt.c
+rbey1@n01-50:~/cs350/lab1$ make
+gcc -O2 -Wall -ggdb -DBSD -DNDEBUG -c getopt.c
+gcc -O2 -Wall -ggdb -DBSD -DNDEBUG -o flip flip.o getopt.o
+rbey1@n01-50:~/cs350/lab1$ make
+make: 'flip' is up to date.
+rbey1@n01-50:~/cs350/lab1$ make clean
+rm -f *.o flip
+rbey1@n01-50:~/cs350/lab1$ make flip
+gcc -O2 -Wall -ggdb -DBSD -DNDEBUG -c flip.c
+gcc -O2 -Wall -ggdb -DBSD -DNDEBUG -c getopt.c
+gcc -O2 -Wall -ggdb -DBSD -DNDEBUG -o flip flip.o getopt.o
+rbey1@n01-50:~/cs350/lab1$ make flip.man
+make: 'flip.man' is up to date.
+rbey1@n01-50:~/cs350/lab1$ 
